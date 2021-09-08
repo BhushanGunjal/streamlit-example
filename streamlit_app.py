@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 import pandas as pd
 import os
 import shutil
