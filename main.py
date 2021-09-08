@@ -32,7 +32,7 @@ if file is not None:
     st.image(image,use_column_width=True)
         
         
-    img = cv2.imread('C:\\Users\\gunja\\Desktop\\image.png',0)
+    img = cv2.imread('image',0)
     #image_bw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     clahe = cv2.createCLAHE(clipLimit = 4)
     final_img = clahe.apply(img) 
