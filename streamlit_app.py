@@ -26,7 +26,7 @@ final_img = clahe.apply(image_bw)
 
 #res = np.vstack((final_img, ordinary_img))
 #cv2.imshow('image', image)
-cv2.imshow('image', final_img)
+#cv2.imshow('image', final_img)
 #cv2.imshow('image', ordinary_img)
 
 
