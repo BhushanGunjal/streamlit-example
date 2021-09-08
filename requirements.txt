@@ -1,6 +1,7 @@
 altair
 pandas
 streamlit
+
+matplotlib
 numpy
 opencv-python-headless
-matplotlib
