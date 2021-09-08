@@ -11,12 +11,12 @@ import pandas as pd
 import os
 import shutil
 
-image = cv2.imread("C:/Users/gunja/Desktop/image.png")
+image1 = cv2.imread("C:/Users/gunja/Desktop/image.png")
 
 #image = cv2.resize(image1, (300, 300))
 
 
-image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+image_bw = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
 
 
 clahe = cv2.createCLAHE(clipLimit = 4)
