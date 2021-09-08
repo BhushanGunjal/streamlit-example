@@ -6,7 +6,7 @@ import streamlit as st
 
 
 
-image = cv2.imread("image.png")
+image = cv2.imread("C:\Users\gunja\Desktop\image.png")
 
 image = cv2.resize(image, (300, 300))
 
