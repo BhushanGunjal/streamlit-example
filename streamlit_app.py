@@ -30,7 +30,7 @@ final_img = clahe.apply(image_bw)
 #cv2.imshow('image', ordinary_img)
 
 
-cv2.imshow('ImageWindow', final_img)
+cv2.imshow('image', final_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 st.pyplot()
