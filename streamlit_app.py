@@ -11,11 +11,11 @@ import pandas as pd
 import os
 import shutil
 
-image1 = cv2.imread("image.png")
+image = cv2.imread("image.png")
 
 
 
-image_bw = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 clahe = cv2.createCLAHE(clipLimit = 4)
 final_img = clahe.apply(image_bw) 
