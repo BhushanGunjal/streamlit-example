@@ -18,13 +18,13 @@ def main():
 
     selected_box = st.sidebar.selectbox(
     'Choose one of the following',
-    ('Welcome','Image Processing', 'Video', 'Face Detection', 'Feature Detection', 'Object Detection')
+    ('Welcome','Image Processing 1','Image Processing 2','Image Processing Combine', 'Covid Detection')
     )
     
     if selected_box == 'Welcome':
         welcome() 
         
-    if selected_box == 'Image Processing':
+    if selected_box == 'Image Processing 1':
         photo()
 
  
