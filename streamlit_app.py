@@ -23,6 +23,7 @@ def main():
     
     if selected_box == 'Welcome':
         welcome() 
+        
     if selected_box == 'Image Processing':
         photo()
 
@@ -41,6 +42,7 @@ def welcome():
 
 
 def photo():
+    
     file=st.file_uploader("Upload x-ray image")
     if file is not None:
         image = file.read()
@@ -66,8 +68,7 @@ def photo():
         st.image(final_img)
         #cv2.waitKey()
         #st.pyplot()
-    
-    
+
 if __name__ == "__main__":
     main()
 
