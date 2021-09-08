@@ -29,7 +29,6 @@ st.subheader('A simple app that shows different image processing algorithms. You
 file=st.file_uploader("Upload x-ray image")
 if file is not None:
     image = file.read()
-    st.image(image,use_column_width=True)
         
         
     img = cv2.imread('image',0)
