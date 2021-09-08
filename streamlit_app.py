@@ -36,7 +36,7 @@ def welcome():
              + ' from the left. I have implemented only a few to show how it works on Streamlit. ' + 
              'You are free to add stuff to this app.')
     
-    st.image('hackershrine.jpg',use_column_width=True)
+
 
 
 
