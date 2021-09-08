@@ -10,7 +10,7 @@ import pandas as pd
 import os
 import shutil
 
-image1 = cv2.imread("C:/Users/gunja/Desktop/image.png")
+image = cv2.imread("C:/Users/gunja/Desktop/image.png")
 
 #image = cv2.resize(image1, (300, 300))
 
