@@ -12,7 +12,7 @@ import shutil
 
 image1 = cv2.imread("C:/Users/gunja/Desktop/image.png")
 
-image = cv2.resize(image1, (300, 300))
+#image = cv2.resize(image1, (300, 300))
 
 
 image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
