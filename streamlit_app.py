@@ -32,4 +32,4 @@ final_img = clahe.apply(image_bw)
 #cv2.imshow('ImageWindow', final_img)
 st.image(final_img
 #cv2.waitKey()
-st.pyplot()
+#st.pyplot()
