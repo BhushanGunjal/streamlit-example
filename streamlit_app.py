@@ -4,35 +4,28 @@ import math
 import pandas as pd
 import streamlit as st
 
-"""
-# Welcome to Streamlit!
-
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
-
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
-"""
 
 
-with st.echo(code_location='below'):
-    total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
-    num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
+image = cv2.imread("image.png")
 
-    Point = namedtuple('Point', 'x y')
-    data = []
+image = cv2.resize(image, (300, 300))
 
-    points_per_turn = total_points / num_turns
 
-    for curr_point_num in range(total_points):
-        curr_turn, i = divmod(curr_point_num, points_per_turn)
-        angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
-        radius = curr_point_num / total_points
-        x = radius * math.cos(angle)
-        y = radius * math.sin(angle)
-        data.append(Point(x, y))
+image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
-        .mark_circle(color='#0068c9', opacity=0.5)
-        .encode(x='x:Q', y='y:Q'))
+
+clahe = cv2.createCLAHE(clipLimit = 4)
+final_img = clahe.apply(image_bw) 
+
+
+#_, ordinary_img = cv2.threshold(image_bw, 155, 201, cv2.THRESH_BINARY)
+
+
+#res = np.vstack((final_img, ordinary_img))
+#cv2.imshow('image', image)
+cv2.imshow('image', final_img)
+#cv2.imshow('image', ordinary_img)
+
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
