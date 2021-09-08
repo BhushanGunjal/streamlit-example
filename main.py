@@ -32,10 +32,10 @@ if file is not None:
     st.image(image,use_column_width=True)
         
         
-    img = cv2.imread('C:\\Users\\gunja\\Desktop\\image.png')
-    image_bw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    img = cv2.imread('C:\\Users\\gunja\\Desktop\\image.png',0)
+    #image_bw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     clahe = cv2.createCLAHE(clipLimit = 4)
-    final_img = clahe.apply(image_bw) 
+    final_img = clahe.apply(img) 
         #_, ordinary_img = cv2.threshold(image_bw, 155, 201, cv2.THRESH_BINARY)
         
         
