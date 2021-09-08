@@ -1,5 +1,4 @@
 from collections import namedtuple
-conda install matplotlib
 import altair as alt
 import math
 import pandas as pd
