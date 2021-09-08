@@ -28,10 +28,12 @@ st.subheader('A simple app that shows different image processing algorithms. You
     
 file=st.file_uploader("Upload x-ray image")
 if file is not None:
+    st.write(type(file))
     image = file.read()
+    
         
         
-    img = cv2.imread('image',0)
+    img = cv2.imread('image.png',0)
     #image_bw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     clahe = cv2.createCLAHE(clipLimit = 4)
     final_img = clahe.apply(img) 
