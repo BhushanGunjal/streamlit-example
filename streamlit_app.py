@@ -32,7 +32,7 @@ cv2.imshow('image', final_img)
 
 cv2.startWindowThread()
 cv2.namedWindow("preview")
-cv2.imshow('image', final_img)
+cv2.imshow('ImageWindow', final_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 st.pyplot()
