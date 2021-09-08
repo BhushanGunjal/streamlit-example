@@ -1,4 +1,5 @@
 from collections import namedtuple
+from PIL import Image
 import altair as alt
 import math
 import pandas as pd
