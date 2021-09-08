@@ -41,7 +41,9 @@ def welcome():
 
 
 def photo():
-    image = cv2.imread("image.png")
+    file=st.file_uploader("Upload x-ray image")
+    if file is not None:
+    image = file.read()
     
     
     
