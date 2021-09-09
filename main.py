@@ -79,7 +79,7 @@ def photo():
             image = np.array(im)
             return image
 
-        uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png'])
+        uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
 
         if uploadFile is not None:
             st.write("Original X-ray Image:")
