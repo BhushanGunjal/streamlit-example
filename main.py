@@ -45,13 +45,19 @@ def photo():
 
     st.header("Thresholding, Edge Detection and Contours")
     
-    if st.button('See Original Image of Tom'):
+    if st.button('See Original Image'):
         
         original = Image.open('image.png')
         st.image(original, use_column_width=True)
         
     image = cv2.imread('image.png')
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    x = st.slider('Change Threshold value',min_value = 0,max_value = 10)     
+    img = cv2.imread('image.png',0)
+    clahe = cv2.createCLAHE(clipLimit = x)
+    final_img = clahe.apply(image) 
+    st.image(final_img)
     
     x = st.slider('Change Threshold value',min_value = 50,max_value = 255)  
 
@@ -63,27 +69,5 @@ def photo():
     histr = cv2.calcHist([image],[0],None,[256],[0,256])
     st.bar_chart(histr)
     
-    st.text("Press the button below to view Canny Edge Detection Technique")
-    if st.button('Canny Edge Detector'):
-        image = load_image("image.png")
-        edges = cv2.Canny(image,50,300)
-        cv2.imwrite('edges.jpg',edges)
-        st.image(edges,use_column_width=True,clamp=True)
-      
-    y = st.slider('Change Value to increase or decrease contours',min_value = 50,max_value = 255)     
-    
-    if st.button('Contours'):
-        im = load_image("image.png")
-          
-        imgray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
-        ret,thresh = cv2.threshold(imgray,y,255,0)
-        image, contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-        
-        img = cv2.drawContours(im, contours, -1, (0,255,0), 3)
- 
-        
-        st.image(thresh, use_column_width=True, clamp = True)
-        st.image(img, use_column_width=True, clamp = True)
-  
 if __name__ == "__main__":
     main()
