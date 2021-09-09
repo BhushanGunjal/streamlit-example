@@ -41,7 +41,7 @@ def photo():
         
         original = cv2.imread('image.png')
         original = cv2.resize(original, (300, 300))
-        st.image(original, use_column_width=True)
+        st.image(original)
         
     image = cv2.imread('image.png')
     image = cv2.resize(image, (300, 300))
