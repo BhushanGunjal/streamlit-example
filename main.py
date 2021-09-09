@@ -17,7 +17,7 @@ import shutil
     
 st.title('Covid Detection using Streamlit')
     
-st.subheader(' Dhanaashree Chavan, Bhushan Gunjal, Durvesh Talekar\n\n\n\n')
+st.header(' Dhanaashree Chavan, Bhushan Gunjal, Durvesh Talekar\n\n\n\n')
     
 
 
@@ -28,12 +28,14 @@ file=st.file_uploader("Upload x-ray image")
 if file is not None:
     st.write(type(file))
     image = file.read()
+    st.subheader('Original')
+    st.image(final_img)
+        
     
-        
-        
+    x = st.slider('Change Threshold value',min_value = 0,max_value = 10)     
     img = cv2.imread('image.png',0)
     #image_bw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    clahe = cv2.createCLAHE(clipLimit = 4)
+    clahe = cv2.createCLAHE(clipLimit = x)
     final_img = clahe.apply(img) 
         #_, ordinary_img = cv2.threshold(image_bw, 155, 201, cv2.THRESH_BINARY)
         
@@ -46,7 +48,6 @@ if file is not None:
      
      
         #cv2.imshow('ImageWindow', final_img)
-    st.image(final_img)
     st.image(final_img)
         #cv2.waitKey()
         #st.pyplot()
