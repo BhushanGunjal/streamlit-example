@@ -84,7 +84,7 @@ def photo():
         if uploadFile is not None:
             st.write("Original X-ray Image:")
             st.write("")
-            img = load_image(uploadFile,0)
+            img = load_image(uploadFile)
             final_img = cv2.resize(img, (400, 400))
             st.image(final_img)
             
