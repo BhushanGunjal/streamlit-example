@@ -34,7 +34,7 @@ if file is not None:
     
     x = st.slider('Change Threshold value',min_value = 0,max_value = 10)     
     img = cv2.imread('image.png',0)
-    #image_bw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+   #image_bw = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     clahe = cv2.createCLAHE(clipLimit = x)
     final_img = clahe.apply(img) 
         #_, ordinary_img = cv2.threshold(image_bw, 155, 201, cv2.THRESH_BINARY)
