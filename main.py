@@ -104,7 +104,7 @@ def photo():
 def photo1():
         
         
-            def load_image(img):
+        def load_image(img):
             im = Image.open(img)
             image = np.array(im)
             return image
