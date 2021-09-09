@@ -52,7 +52,7 @@ if file is not None:
         #cv2.waitKey()
         #st.pyplot()
         
-        image = cv2.imread('tom.jpg')
+    image = cv2.imread('image.jpg')
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
     x = st.slider('Change Threshold value',min_value = 50,max_value = 255)  
