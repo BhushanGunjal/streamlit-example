@@ -27,25 +27,20 @@ def main():
 
 def welcome():
     
-    st.title('Image Processing using Streamlit')
+    st.title('Covid 19 Detection using X-ray')
     
-    st.subheader('A simple app that shows different image processing algorithms. You can choose the options'
-             + ' from the left. I have implemented only a few to show how it works on Streamlit. ' + 
-             'You are free to add stuff to this app.')
+    st.subheader('Dhanashree Chavan, Bhushan Gunjal, Durvesh Talekar')
     
 
 
-def load_image(filename):
-    image = cv2.imread(filename)
-    return image
- 
 def photo():
 
     st.header("Thresholding, Edge Detection and Contours")
     
     if st.button('See Original Image'):
         
-        original = Image.open('image.png')
+        original = cv2.imread('image.png')
+        original = cv2.resize(image, (300, 300))
         st.image(original, use_column_width=True)
         
     image = cv2.imread('image.png')
