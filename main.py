@@ -62,7 +62,7 @@ def photo():
     st.image(final_img)
     
     #x = st.slider('Change Threshold value',min_value = 69,max_value = 169)  
-    for x in range(69,170)
+    for x in range(69,170):
         ret,thresh1 = cv2.threshold(image,x,255,cv2.THRESH_BINARY)
         thresh1 = thresh1.astype(np.float64)
         st.image(thresh1, use_column_width=True,clamp = True)
