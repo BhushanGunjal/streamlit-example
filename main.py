@@ -49,7 +49,7 @@ def welcome():
 
 def photo():
                      
-    _, col2, _ = st.columns([1, 2, 1])
+    _, col2, _ = st.columns([1, 6, 1])
 
     with col2:
 
