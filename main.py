@@ -48,9 +48,11 @@ def photo():
     if st.button('See Original Image'):
         
         original = Image.open('image.png')
-        st.image(original, use_column_width=True)
+        image = cv2.resize(original, (300, 300))
+        st.image(image, use_column_width=True)
         
     image = cv2.imread('image.png')
+    image = cv2.resize(image, (300, 300))
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
     x = st.slider('Change Threshold value',min_value = 0,max_value = 10)     
