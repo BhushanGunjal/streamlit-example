@@ -32,8 +32,9 @@ def welcome():
     
         st.title('Covid 19 Detection using X-ray')
     with col2:
+        st.write("")
+        st.write("")
         st.subheader('Dhanashree Chavan')
-        
         st.subheader('Bhushan Gunjal')
         st.subheader('Durvesh Talekar')
     
