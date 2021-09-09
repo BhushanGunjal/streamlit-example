@@ -73,7 +73,6 @@ def photo():
         st.text("Bar Chart of the image")
         histr = cv2.calcHist([image],[0],None,[256],[0,256])
         st.bar_chart(histr)
-        waitKey(0)
         st.stop()
 
     
