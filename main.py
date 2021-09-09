@@ -15,11 +15,11 @@ import shutil
 
 
     
-st.title('Image Processing using Streamlit')
+st.title('Covid Detection using Streamlit')
     
-st.subheader('A simple app that shows different image processing algorithms. You can choose the options'
-             + ' from the left. I have implemented only a few to show how it works on Streamlit. ' + 
-             'You are free to add stuff to this app.')
+st.subheader(' Dhanaashree Chavan '
+             + ' Bhushan Gunjal ' + 
+             ' Durvesh Talekar ')
     
 
 
