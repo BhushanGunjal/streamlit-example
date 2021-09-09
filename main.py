@@ -32,9 +32,9 @@ def welcome():
     
         st.title('Covid 19 Detection using X-ray')
     
-        st.subheader('Dhanashree Chavan")
-        st.subheader("Bhushan Gunjal")
-        st.subheader("Durvesh Talekar')
+        st.subheader('Dhanashree Chavan')
+        st.subheader('Bhushan Gunjal')
+        st.subheader('Durvesh Talekar')
     
 
 
