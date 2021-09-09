@@ -17,7 +17,7 @@ import shutil
     
 st.title('Covid Detection using Streamlit')
     
-st.subheader(' Dhanaashree Chavan\n Bhushan Gunjal\n Durvesh Talekar')
+st.subheader(' Dhanaashree Chavan, Bhushan Gunjal, Durvesh Talekar\n\n\n\n')
     
 
 
