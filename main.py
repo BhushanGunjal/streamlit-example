@@ -26,19 +26,25 @@ def main():
  
 
 def welcome():
-    _, col2, _ = st.beta_columns([1, 2, 1])
+    _, col2, _ = st.columns([1, 2, 1])
 
     with col2:
     
         st.title('Covid 19 Detection using X-ray')
     
-        st.subheader('Dhanashree Chavan, Bhushan Gunjal, Durvesh Talekar')
+        st.subheader('Dhanashree Chavan")
+        st.subheader("Bhushan Gunjal")
+        st.subheader("Durvesh Talekar')
     
 
 
 def photo():
+                     
+    _, col2, _ = st.columns([1, 2, 1])
 
-    st.header("Image Pre-processing using CLAHE method")
+    with col2:
+
+        st.header("Image Pre-processing using CLAHE method")
     
     ##if st.button('See Original Image'):
         
@@ -56,37 +62,37 @@ def photo():
   #  final_img = clahe.apply(image) 
   #  st.image(final_img)//
     
-    def load_image(img):
-        im = Image.open(img)
-        image = np.array(im)
-        return image
+        def load_image(img):
+            im = Image.open(img)
+            image = np.array(im)
+            return image
 
-    uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png'])
+        uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png'])
 
-    if uploadFile is not None:
-        st.write("Original X-ray Image:")
-        img = load_image(uploadFile)
-        st.image(img)
-        clahe = cv2.createCLAHE(clipLimit = 4)
-        final_img = clahe.apply(img)
-        st.write("")
-        st.write("")
-        st.write("After applying CLAHE:")
-        st.image(final_img)
-    else:
-        st.write("Make sure you image is in JPG/PNG Format.")
+        if uploadFile is not None:
+            st.write("Original X-ray Image:")
+            img = load_image(uploadFile)
+            st.image(img)
+            clahe = cv2.createCLAHE(clipLimit = 4)
+            final_img = clahe.apply(img)
+            st.write("")
+            st.write("")
+            st.write("After applying CLAHE:")
+            st.image(final_img)
+        else:
+            st.write("Make sure you image is in JPG/PNG Format.")
     
-def photo1():
-        x = st.slider('Change Threshold value',min_value = 69,max_value = 169)
-        image = cv2.imread('image.png')
-        image = cv2.resize(image, (300, 300))
-        ret,thresh1 = cv2.threshold(image,x,255,cv2.THRESH_BINARY)
-        thresh1 = thresh1.astype(np.float64)
-        st.image(thresh1, use_column_width=True,clamp = True)
+    def photo1():
+            x = st.slider('Change Threshold value',min_value = 69,max_value = 169)
+            image = cv2.imread('image.png')
+            image = cv2.resize(image, (300, 300))
+            ret,thresh1 = cv2.threshold(image,x,255,cv2.THRESH_BINARY)
+            thresh1 = thresh1.astype(np.float64)
+            st.image(thresh1, use_column_width=True,clamp = True)
     
-        st.text("Bar Chart of the image")
-        histr = cv2.calcHist([image],[0],None,[256],[0,256])
-        st.bar_chart(histr)
+            st.text("Bar Chart of the image")
+            histr = cv2.calcHist([image],[0],None,[256],[0,256])
+            st.bar_chart(histr)
 
     
 if __name__ == "__main__":
