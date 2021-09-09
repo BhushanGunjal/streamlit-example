@@ -101,7 +101,7 @@ def photo():
         else:
             st.write("Make sure you image is in JPG/PNG Format.")
     
-    def photo1():
+def photo1():
         
         
             def load_image(img):
