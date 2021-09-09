@@ -10,7 +10,7 @@ def main():
 
     selected_box = st.sidebar.selectbox(
     'Choose one of the following',
-    ('Welcome','Image Processing', 'Video', 'Face Detection', 'Feature Detection', 'Object Detection')
+    ('Welcome','Image Processing 1', 'Image Processing 2', 'Image Preprocessing', 'Detection')
     )
     
     if selected_box == 'Welcome':
@@ -20,7 +20,7 @@ def main():
     if selected_box == 'Image Processing 2':
         photo1()
     if selected_box == 'Image Preprocessing':
-        face_detection()
+        photo3()
     if selected_box == 'Detection':
         feature_detection()
  
