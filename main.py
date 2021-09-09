@@ -26,7 +26,7 @@ def main():
  
 
 def welcome():
-    _, col2, _ = st.columns([1, 6, 1])
+    _, col2, _ = st.columns([1, 10, 1])
 
     with col2:
         st.write("")
