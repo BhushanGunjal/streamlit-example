@@ -61,15 +61,15 @@ def photo():
     final_img = clahe.apply(image) 
     st.image(final_img)
     
-    x = st.slider('Change Threshold value',min_value = 50,max_value = 255)  
-
-    ret,thresh1 = cv2.threshold(image,x,255,cv2.THRESH_BINARY)
-    thresh1 = thresh1.astype(np.float64)
-    st.image(thresh1, use_column_width=True,clamp = True)
+    #x = st.slider('Change Threshold value',min_value = 69,max_value = 169)  
+    for x in range(69,170)
+        ret,thresh1 = cv2.threshold(image,x,255,cv2.THRESH_BINARY)
+        thresh1 = thresh1.astype(np.float64)
+        st.image(thresh1, use_column_width=True,clamp = True)
     
-    st.text("Bar Chart of the image")
-    histr = cv2.calcHist([image],[0],None,[256],[0,256])
-    st.bar_chart(histr)
+        st.text("Bar Chart of the image")
+        histr = cv2.calcHist([image],[0],None,[256],[0,256])
+        st.bar_chart(histr)
     
 if __name__ == "__main__":
     main()
