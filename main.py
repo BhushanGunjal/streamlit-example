@@ -58,15 +58,15 @@ def photo():
         image = np.array(im)
         return image
 
-    # Uploading the File to the Page
     uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png'])
 
-    # Checking the Format of the page
     if uploadFile is not None:
-        # Perform your Manupilations (In my Case applying Filters)
+        st.write("Original X-ray Image:")
         img = load_image(uploadFile)
         st.image(img)
-        st.write("Image Uploaded Successfully")
+        clahe = cv2.createCLAHE(clipLimit = 4)
+        final_img = clahe.apply(img) 
+        st.image(final_img)
     else:
         st.write("Make sure you image is in JPG/PNG Format.")
     
