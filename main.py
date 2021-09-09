@@ -102,9 +102,24 @@ def photo():
             st.write("Make sure you image is in JPG/PNG Format.")
     
     def photo1():
+        
+        
+            def load_image(img):
+            im = Image.open(img)
+            image = np.array(im)
+            return image
+
+        uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
+
+        if uploadFile is not None:
+            st.write("Original X-ray Image:")
+            st.write("")
+            img = load_image(uploadFile)
+            img = cv2.resize(img, (400, 400))
+            
             x = st.slider('Change Threshold value',min_value = 69,max_value = 169)
             image = cv2.imread('image.png')
-            image = cv2.resize(image, (300, 300))
+            image = cv2.resize(img, (300, 300))
             ret,thresh1 = cv2.threshold(image,x,255,cv2.THRESH_BINARY)
             thresh1 = thresh1.astype(np.float64)
             st.image(thresh1, use_column_width=True,clamp = True)
@@ -112,6 +127,12 @@ def photo():
             st.text("Bar Chart of the image")
             histr = cv2.calcHist([image],[0],None,[256],[0,256])
             st.bar_chart(histr)
+      
+            st.image(final_img)
+        else:
+            st.write("Make sure you image is in JPG/PNG Format.")
+            
+            
 
     
 if __name__ == "__main__":
