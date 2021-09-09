@@ -26,32 +26,35 @@ def main():
  
 
 def welcome():
+    _, col2, _ = st.beta_columns([1, 2, 1])
+
+    with col2:
     
-    st.title('Covid 19 Detection using X-ray')
+        st.title('Covid 19 Detection using X-ray')
     
-    st.subheader('Dhanashree Chavan, Bhushan Gunjal, Durvesh Talekar')
+        st.subheader('Dhanashree Chavan, Bhushan Gunjal, Durvesh Talekar')
     
 
 
 def photo():
 
-    st.header("Thresholding, Edge Detection and Contours")
+    st.header("Image Pre-processing using CLAHE method")
     
-    if st.button('See Original Image'):
+    ##if st.button('See Original Image'):
         
-        original = cv2.imread('image.png')
-        original = cv2.resize(original, (300, 300))
-        st.image(original)
+        #original = cv2.imread('image.png')
+        #original = cv2.resize(original, (400, 400))
+        #st.image(original)
      
-    image = cv2.imread('image.png')
-    image = cv2.resize(image, (300, 300))
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    
-    x = st.slider('Change Threshold value',min_value = 0,max_value = 10)     
-    img = cv2.imread('image.png',0)
-    clahe = cv2.createCLAHE(clipLimit = x)
-    final_img = clahe.apply(image) 
-    st.image(final_img)
+   # image = cv2.imread('image.png')
+   # image = cv2.resize(image, (400, 400))
+  #  image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+  #  
+  #  x = st.slider('Change Threshold value',min_value = 0,max_value = 10)     
+  #  img = cv2.imread('image.png',0)
+ #   clahe = cv2.createCLAHE(clipLimit = x)
+  #  final_img = clahe.apply(image) 
+  #  st.image(final_img)//
     
     def load_image(img):
         im = Image.open(img)
@@ -65,7 +68,10 @@ def photo():
         img = load_image(uploadFile)
         st.image(img)
         clahe = cv2.createCLAHE(clipLimit = 4)
-        final_img = clahe.apply(img) 
+        final_img = clahe.apply(img)
+        st.write("")
+        st.write("")
+        st.write("After applying CLAHE:")
         st.image(final_img)
     else:
         st.write("Make sure you image is in JPG/PNG Format.")
