@@ -53,7 +53,10 @@ def photo():
 
     with col2:
 
-        st.header("Image Pre-processing using CLAHE method")
+        st.header("Image Pre-processing using CLAHE")
+        st.write("")
+        st.write("")
+        st.write("")
     
     ##if st.button('See Original Image'):
         
@@ -80,6 +83,7 @@ def photo():
 
         if uploadFile is not None:
             st.write("Original X-ray Image:")
+            st.write("")
             img = load_image(uploadFile)
             st.image(img)
             clahe = cv2.createCLAHE(clipLimit = 4)
@@ -87,6 +91,8 @@ def photo():
             st.write("")
             st.write("")
             st.write("After applying CLAHE:")
+            st.write("")
+      
             st.image(final_img)
         else:
             st.write("Make sure you image is in JPG/PNG Format.")
