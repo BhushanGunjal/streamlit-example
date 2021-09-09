@@ -29,7 +29,7 @@ if file is not None:
     st.write(type(file))
     image = file.read()
     st.subheader('Original')
-    st.image(final_img)
+    st.image('image.png')
         
     
     x = st.slider('Change Threshold value',min_value = 0,max_value = 10)     
