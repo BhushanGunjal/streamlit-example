@@ -40,7 +40,7 @@ def photo():
     if st.button('See Original Image'):
         
         original = cv2.imread('image.png')
-        original = cv2.resize(image, (300, 300))
+        original = cv2.resize(original, (300, 300))
         st.image(original, use_column_width=True)
         
     image = cv2.imread('image.png')
