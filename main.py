@@ -87,8 +87,10 @@ def photo():
             img = load_image(uploadFile)
             final_img = cv2.resize(img, (400, 400))
             st.image(final_img)
+            
+            im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             clahe = cv2.createCLAHE(clipLimit = 4) 
-            final_img = clahe.apply(img) 
+            final_img = clahe.apply(im) 
             final_img = cv2.resize(final_img, (400, 400))
             st.write("")
             st.write("")
