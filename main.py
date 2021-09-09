@@ -42,7 +42,7 @@ def photo():
         original = cv2.imread('image.png')
         original = cv2.resize(original, (300, 300))
         st.image(original)
-        
+     
     image = cv2.imread('image.png')
     image = cv2.resize(image, (300, 300))
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -52,6 +52,23 @@ def photo():
     clahe = cv2.createCLAHE(clipLimit = x)
     final_img = clahe.apply(image) 
     st.image(final_img)
+    
+    def load_image(img):
+        im = Image.open(img)
+        image = np.array(im)
+        return image
+
+    # Uploading the File to the Page
+    uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png'])
+
+    # Checking the Format of the page
+    if uploadFile is not None:
+        # Perform your Manupilations (In my Case applying Filters)
+        img = load_image(uploadFile)
+        st.image(img)
+        st.write("Image Uploaded Successfully")
+    else:
+        st.write("Make sure you image is in JPG/PNG Format.")
     
 def photo1():
         x = st.slider('Change Threshold value',min_value = 69,max_value = 169)
