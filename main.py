@@ -15,16 +15,14 @@ def main():
     
     if selected_box == 'Welcome':
         welcome() 
-    if selected_box == 'Image Processing':
+    if selected_box == 'Image Processing 1':
         photo()
-    if selected_box == 'Video':
-        video()
-    if selected_box == 'Face Detection':
+    if selected_box == 'Image Processing 2':
+        photo1()
+    if selected_box == 'Image Preprocessing':
         face_detection()
-    if selected_box == 'Feature Detection':
+    if selected_box == 'Detection':
         feature_detection()
-    if selected_box == 'Object Detection':
-        object_detection() 
  
 
 def welcome():
@@ -60,9 +58,8 @@ def photo():
     final_img = clahe.apply(image) 
     st.image(final_img)
     
-    #x = st.slider('Change Threshold value',min_value = 69,max_value = 169)  
-    for x in range(69,170):
-        
+def photo1():
+        x = st.slider('Change Threshold value',min_value = 69,max_value = 169)
         image = cv2.imread('image.png')
         image = cv2.resize(image, (300, 300))
         ret,thresh1 = cv2.threshold(image,x,255,cv2.THRESH_BINARY)
@@ -72,7 +69,6 @@ def photo():
         st.text("Bar Chart of the image")
         histr = cv2.calcHist([image],[0],None,[256],[0,256])
         st.bar_chart(histr)
-        st.empty()
 
     
 if __name__ == "__main__":
