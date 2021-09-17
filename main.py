@@ -87,8 +87,8 @@ def photo():
             final_img = cv2.resize(img, (400, 400))
             st.image(final_img)
             
-            img1 = Image.fromarray(np.uint8(final_img))
-            t = img1.convert('L')
+            img = Image.fromarray(np.uint8(final_img))
+            t = img.convert('L')
             img=Image.fromarray(np.uint8(t)*255)
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
