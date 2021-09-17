@@ -1,11 +1,7 @@
-  
-import keras
-import numpy as np
 import streamlit as st
-from keras import layers, models, optimizers  # modeling
 from PIL import Image
-
 import cv2 
+import numpy as np
 
 img = st.file_uploader(label="Load X-Ray Chest image", type=['jpeg', 'jpg', 'png'], key="xray")
 
