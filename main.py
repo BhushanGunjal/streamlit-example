@@ -62,16 +62,17 @@ with col2:
         temp = st.file_uploader("Upload X-Ray Image")
         buffer = temp
         temp_file = NamedTemporaryFile(delete=False)
-        if buffer:
-            temp_file.write(buffer.getvalue())
-            st.write(image.load_img(temp_file.name))
 
 
         if buffer is None:
           st.text("Oops! that doesn't look like an image. Try again.")
 
         else:
-
+            img = Image.open(temp)
+            pil2cvt = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
+            pil2cvt2gray = cv2.cvtColor(pil2cvt, cv2.COLOR_BGR2GRAY)
+            st.write("Thresholding")
+            gray_eqhist = cv2.equalizeHist(pil2cvt2gray)
             st.write("Original X-ray Image:")
             st.write("")
             final_img = image.load_img(temp_file.name, target_size=(500, 500),color_mode='grayscale')
