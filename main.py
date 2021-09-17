@@ -75,8 +75,8 @@ def photo():
     
         def load_image(img):
             im = Image.open(img)
-            image = np.array(im)
-            return image
+            image_array = np.array(im)
+            return image_array
 
         uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
 
@@ -84,24 +84,40 @@ def photo():
             st.write("Original X-ray Image:")
             st.write("")
             img = load_image(uploadFile)
-            final_img = cv2.resize(img, (400, 400))
+            final_img = cv2.resize(img, (255, 255))
             st.image(final_img)
-            #notworking
+            img8 = Image.fromarray(np.uint8(final_img))
+            t =img8.convert('L')
+            #img8=Image.fromarray(np.uint8(t)*255)
+            t.save(r'C:\Users\durve\OneDrive\Desktop\Machine Learning\1.jpg')
+            #final_img0 = cv2.resize(img8, (255, 255))
+            #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+            image = cv2.imread(r'C:\Users\durve\OneDrive\Desktop\Machine Learning\1.jpg')
+            #cv2.imshow('1.jpg', image)
+            # Resizing the image for compatibility
+            image = cv2.resize(image, (300, 300))
 
-            
-            clahe = cv2.createCLAHE(clipLimit = 4) 
-            img2 = clahe.apply(final_img) 
-            #assertionerror comes here
-            #final_img = cv2.resize(img2, (400, 400))
+            # The initial processing of the image
+            # image = cv2.medianBlur(image, 3)
+            image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+            # The declaration of CLAHE 
+            # clipLimit -> Threshold for contrast limiting
+            clahe = cv2.createCLAHE(clipLimit = 4)
+            final_img = clahe.apply(image_bw) 
+
+            # Ordinary thresholding the same image
+            _, ordinary_img = cv2.threshold(image_bw, 155, 255, cv2.THRESH_BINARY)
+            #clahe = cv2.createCLAHE(clipLimit = 4)
+#             final_img1 = clahe.apply(imagex) 
+#             final_img2 = cv2.resize(final_img1, (299, 299))
             st.write("")
             st.write("")
             st.write("After applying CLAHE:")
             st.write("")
-      
-            st.image(img2)
+            st.image(final_img)
         else:
             st.write("Make sure you image is in JPG/PNG Format.")
-    
 def photo1():
         
         
