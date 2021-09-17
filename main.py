@@ -92,6 +92,7 @@ def photo():
             img = Image.fromarray(np.uint8(final_img))
             t = img.convert('L')
             img=Image.fromarray(np.uint8(t)*255)
+            img=load_image(img)
             clahe = cv2.createCLAHE(clipLimit = 4) 
             img2 = clahe.apply(img) 
             #assertionerror comes here
