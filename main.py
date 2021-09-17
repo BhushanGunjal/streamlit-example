@@ -80,9 +80,9 @@ with col2:
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
             clahe = cv2.createCLAHE(clipLimit = 4) 
-            final_img = clahe.apply(final_img) 
+            fimg = clahe.apply(final_img) 
             #assertionerror comes here
-            fimg = cv2.resize(final_img, (400, 400))
+#             fimg = cv2.resize(final_img, (400, 400))
             st.write("")
             st.write("")
             st.write("After applying CLAHE:")
