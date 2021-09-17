@@ -5,6 +5,8 @@ import streamlit as st
 from keras import layers, models, optimizers  # modeling
 from PIL import Image
 
+import cv2 
+
 img = st.file_uploader(label="Load X-Ray Chest image", type=['jpeg', 'jpg', 'png'], key="xray")
 
 if img is not None:
