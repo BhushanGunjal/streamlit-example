@@ -76,7 +76,7 @@ with col2:
             st.write("Original X-ray Image:")
             st.write("")
             final_img = image.load_img(temp_file.name, target_size=(500, 500),color_mode='grayscale')
-            st.image(final_img)
+            st.image(img)
             
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
@@ -89,7 +89,7 @@ with col2:
             st.write("After applying CLAHE:")
             st.write("")
       
-            st.image(fimg)
+            st.image(applied_clahe)
     
 # def photo1():
         
