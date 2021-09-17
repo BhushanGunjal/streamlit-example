@@ -94,7 +94,7 @@ def photo():
             img=Image.fromarray(np.uint8(t)*255)
             
             img.save(r'C:\Users\gunja\Desktop\image2.jpg')
-            image = cv2.imread('C:\Users\gunja\Desktop\image2.jpg')
+            image = cv2.imread(r'C:\Users\gunja\Desktop\image2.jpg')
             clahe = cv2.createCLAHE(clipLimit = 4) 
             img2 = clahe.apply(image) 
             #assertionerror comes here
