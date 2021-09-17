@@ -74,14 +74,34 @@ def photo():
   #  final_img = clahe.apply(image) 
   #  st.image(final_img)//
     
-        def load_image(img):
-            im = Image.open(img)
-            image = np.array(im)
-            return image
+        #def load_image(img):
+            #im = Image.open(img)
+            #image = np.array(im)
+            #return image
 
-        uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
+        #uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
+        
+        
 
-        if uploadFile is not None:
+        #if uploadFile is not None:
+          temp = st.file_uploader("Upload X-Ray Image")
+#temp = temp.decode()
+
+          buffer = temp
+          temp_file = NamedTemporaryFile(delete=False)
+          if buffer:
+              temp_file.write(buffer.getvalue())
+              st.write(image.load_img(temp_file.name))
+
+
+          if buffer is None:
+            st.text("Oops! that doesn't look like an image. Try again.")
+
+          else:
+
+
+
+            hardik_img = image.load_img(temp_file.name, target_size=(500, 500),color_mode='grayscale')
             st.write("Original X-ray Image:")
             st.write("")
             img = load_image(uploadFile)
