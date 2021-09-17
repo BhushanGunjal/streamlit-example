@@ -91,11 +91,11 @@ def photo():
             st.image(img1)
             
             t = img1.convert('L')
-            img1=Image.fromarray(np.uint8(t)*255)
+            img3=Image.fromarray(np.uint8(t)*255)
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
             clahe = cv2.createCLAHE(clipLimit = 4) 
-            img2 = clahe.apply(img1) 
+            img2 = clahe.apply(img3) 
             #assertionerror comes here
             final_img3 = cv2.resize(img2, (400, 400))
             st.write("")
