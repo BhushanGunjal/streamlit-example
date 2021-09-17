@@ -1,4 +1,3 @@
-
 import streamlit as st
 from PIL import Image
 import cv2 
@@ -47,16 +46,16 @@ def welcome():
     
 
 
-#def photo():
+def photo():
                      
-    #_, col2, _ = st.columns([1, 6, 1])
+    _, col2, _ = st.columns([1, 6, 1])
 
-    #with col2:
+    with col2:
 
-        #st.header("Image Pre-processing using CLAHE")
-        #st.write("")
-        #st.write("")
-        #st.write("")
+        st.header("Image Pre-processing using CLAHE")
+        st.write("")
+        st.write("")
+        st.write("")
     
     ##if st.button('See Original Image'):
         
@@ -74,44 +73,14 @@ def welcome():
   #  final_img = clahe.apply(image) 
   #  st.image(final_img)//
     
-        #def load_image(img):
-            #im = Image.open(img)
-            #image = np.array(im)
-            #return image
+        def load_image(img):
+            im = Image.open(img)
+            image = np.array(im)
+            return image
 
-        #uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
-        
-        
+        uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
 
-        #if uploadFile is not None:
-def photo():
-                     
-    _, col2, _ = st.columns([1, 6, 1])
-
-    with col2:
-
-          st.header("Image Pre-processing using CLAHE")
-          st.write("")
-          st.write("")
-          st.write("")
-          temp = st.file_uploader("Upload X-Ray Image")
-#temp = temp.decode()
-
-          buffer = temp
-          temp_file = NamedTemporaryFile(delete=False)
-          if buffer:
-              temp_file.write(buffer.getvalue())
-              st.write(image.load_img(temp_file.name))
-
-
-          if buffer is None:
-            st.text("Oops! that doesn't look like an image. Try again.")
-
-          else:
-
-
-
-            hardik_img = image.load_img(temp_file.name, target_size=(500, 500),color_mode='grayscale')
+        if uploadFile is not None:
             st.write("Original X-ray Image:")
             st.write("")
             img = load_image(uploadFile)
@@ -121,17 +90,17 @@ def photo():
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
             clahe = cv2.createCLAHE(clipLimit = 4) 
-            final_img = clahe.apply(final_img) 
+            final_img = clahe.apply(img) 
             #assertionerror comes here
-            #final_img = cv2.resize(final_img, (400, 400))
+            final_img = cv2.resize(final_img, (400, 400))
             st.write("")
             st.write("")
             st.write("After applying CLAHE:")
             st.write("")
       
             st.image(final_img)
-        #else:
-            #st.write("Make sure you image is in JPG/PNG Format.")
+        else:
+            st.write("Make sure you image is in JPG/PNG Format.")
     
 def photo1():
         
