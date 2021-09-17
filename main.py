@@ -130,8 +130,8 @@ def photo():
             st.write("")
       
             st.image(final_img)
-        else:
-            st.write("Make sure you image is in JPG/PNG Format.")
+        #else:
+            #st.write("Make sure you image is in JPG/PNG Format.")
     
 def photo1():
         
