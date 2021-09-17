@@ -88,22 +88,20 @@ def photo():
             st.image(final_img)
             
             img1 = Image.fromarray(np.uint8(final_img))
-            st.image(img1)
-            
             t = img1.convert('L')
-            img3=Image.fromarray(np.uint8(t)*255)
+            img=Image.fromarray(np.uint8(t)*255)
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
             clahe = cv2.createCLAHE(clipLimit = 4) 
-            img2 = clahe.apply(img3) 
+            img2 = clahe.apply(img) 
             #assertionerror comes here
-            final_img3 = cv2.resize(img2, (400, 400))
+            final_img = cv2.resize(img2, (400, 400))
             st.write("")
             st.write("")
             st.write("After applying CLAHE:")
             st.write("")
       
-            st.image(final_img3)
+            st.image(final_img)
         else:
             st.write("Make sure you image is in JPG/PNG Format.")
     
