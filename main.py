@@ -47,16 +47,16 @@ def welcome():
     
 
 
-def photo():
+#def photo():
                      
-    _, col2, _ = st.columns([1, 6, 1])
+    #_, col2, _ = st.columns([1, 6, 1])
 
-    with col2:
+    #with col2:
 
-        st.header("Image Pre-processing using CLAHE")
-        st.write("")
-        st.write("")
-        st.write("")
+        #st.header("Image Pre-processing using CLAHE")
+        #st.write("")
+        #st.write("")
+        #st.write("")
     
     ##if st.button('See Original Image'):
         
@@ -84,6 +84,16 @@ def photo():
         
 
         #if uploadFile is not None:
+def photo():
+                     
+    _, col2, _ = st.columns([1, 6, 1])
+
+    with col2:
+
+          st.header("Image Pre-processing using CLAHE")
+          st.write("")
+          st.write("")
+          st.write("")
           temp = st.file_uploader("Upload X-Ray Image")
 #temp = temp.decode()
 
