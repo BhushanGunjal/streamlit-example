@@ -82,13 +82,13 @@ with col2:
             clahe = cv2.createCLAHE(clipLimit = 4) 
             final_img = clahe.apply(final_img) 
             #assertionerror comes here
-            final_img = cv2.resize(final_img, (400, 400))
+            fimg = cv2.resize(final_img, (400, 400))
             st.write("")
             st.write("")
             st.write("After applying CLAHE:")
             st.write("")
       
-            st.image(final_img)
+            st.image(fimg)
     
 # def photo1():
         
