@@ -74,8 +74,7 @@ def photo():
 
             st.write("Original X-ray Image:")
             st.write("")
-            img = load_image(uploadFile)
-            final_img = cv2.resize(img, (400, 400))
+            final_img = image.load_img(temp_file.name, target_size=(500, 500),color_mode='grayscale')
             st.image(final_img)
             
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
