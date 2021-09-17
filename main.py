@@ -9,10 +9,4 @@ img = st.file_uploader(label="Load X-Ray Chest image", type=['jpeg', 'jpg', 'png
 
 if img is not None:
     # Preprocessing Image
-    p_img = functions.preprocess_image(img)
-
-    if st.checkbox('Zoom image'):
-        image = np.array(Image.open(img))
-        st.image(image, use_column_width=True)
-    else:
-        st.image(p_img)
+        st.image(img)
