@@ -87,6 +87,8 @@ def photo():
             final_img = cv2.resize(img, (400, 400))
             st.image(final_img)
             
+            img1 = Image.fromarray(np.uint8(final_img))
+            st.image(img1)
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
             clahe = cv2.createCLAHE(clipLimit = 4) 
