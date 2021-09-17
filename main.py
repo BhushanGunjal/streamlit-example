@@ -87,7 +87,7 @@ def photo():
             final_img = cv2.resize(img, (400, 400))
             st.image(final_img)
             
-            img = Image.fromarray(np.uint8(final_img))
+            img = Image.fromarray(np.uint8(final_img)*255)
             
             st.image(img)
             #t = img.convert('L')
