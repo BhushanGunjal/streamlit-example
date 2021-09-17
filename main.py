@@ -121,6 +121,13 @@ def photo1():
             x = st.slider('Change Threshold value',min_value = 69,max_value = 169)
             image = cv2.imread('image.png')
             image = cv2.resize(img, (300, 300))
+            image_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+  
+            # The declaration of CLAHE 
+            # clipLimit -> Threshold for contrast limiting
+            clahe = cv2.createCLAHE(clipLimit = 40)
+            final_img = clahe.apply(image_bw) 
+            st.image(final_img)
             ret,thresh1 = cv2.threshold(image,x,255,cv2.THRESH_BINARY)
             thresh1 = thresh1.astype(np.float64)
             st.image(thresh1, use_column_width=True,clamp = True)
