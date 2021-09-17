@@ -80,7 +80,7 @@ def photo():
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
             clahe = cv2.createCLAHE(clipLimit = 4) 
-            final_img = clahe.apply(img) 
+            final_img = clahe.apply(final_img) 
             #assertionerror comes here
             final_img = cv2.resize(final_img, (400, 400))
             st.write("")
