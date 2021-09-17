@@ -88,9 +88,12 @@ def photo():
             st.image(final_img)
             #notworking
 
-            t = final_img.convert('L')
+            
+            img = Image.fromarray(np.uint8(final_img))
+            t = img.convert('L')
+            img=Image.fromarray(np.uint8(t)*255)
             clahe = cv2.createCLAHE(clipLimit = 4) 
-            img2 = clahe.apply(t) 
+            img2 = clahe.apply(img) 
             #assertionerror comes here
             #final_img = cv2.resize(img2, (400, 400))
             st.write("")
