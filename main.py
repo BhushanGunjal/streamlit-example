@@ -2,7 +2,8 @@ import streamlit as st
 from PIL import Image
 import cv2 
 import numpy as np
-
+from tempfile import NamedTemporaryFile
+from tensorflow.keras.preprocessing import image 
 
 
 def main():
@@ -57,30 +58,19 @@ def photo():
         st.write("")
         st.write("")
     
-    ##if st.button('See Original Image'):
-        
-        #original = cv2.imread('image.png')
-        #original = cv2.resize(original, (400, 400))
-        #st.image(original)
-     
-   # image = cv2.imread('image.png')
-   # image = cv2.resize(image, (400, 400))
-  #  image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-  #  
-  #  x = st.slider('Change Threshold value',min_value = 0,max_value = 10)     
-  #  img = cv2.imread('image.png',0)
- #   clahe = cv2.createCLAHE(clipLimit = x)
-  #  final_img = clahe.apply(image) 
-  #  st.image(final_img)//
-    
-        def load_image(img):
-            im = Image.open(img)
-            image = np.array(im)
-            return image
+        temp = st.file_uploader("Upload X-Ray Image")
+        buffer = temp
+        temp_file = NamedTemporaryFile(delete=False)
+        if buffer:
+            temp_file.write(buffer.getvalue())
+            st.write(image.load_img(temp_file.name))
 
-        uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
 
-        if uploadFile is not None:
+        if buffer is None:
+          st.text("Oops! that doesn't look like an image. Try again.")
+
+        else:
+
             st.write("Original X-ray Image:")
             st.write("")
             img = load_image(uploadFile)
@@ -99,8 +89,6 @@ def photo():
             st.write("")
       
             st.image(final_img)
-        else:
-            st.write("Make sure you image is in JPG/PNG Format.")
     
 def photo1():
         
