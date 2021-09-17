@@ -9,7 +9,7 @@ if img is not None:
             st.write("Original X-ray Image:")
             st.write("")
             final_img = cv2.resize(img, (400, 400))
-            st.image(final_img)
+            st.image(img)
             
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
