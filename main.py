@@ -89,6 +89,9 @@ def photo():
             
             img1 = Image.fromarray(np.uint8(final_img))
             st.image(img1)
+            
+            t = img1.convert('L')
+            img1=Image.fromarray(np.uint8(t)*255)
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             #notworking
             clahe = cv2.createCLAHE(clipLimit = 4) 
