@@ -50,9 +50,9 @@ from tensorflow.keras.preprocessing import image
 
 # def photo():
                      
-    _, col2, _ = st.columns([1, 6, 1])
+_, col2, _ = st.columns([1, 6, 1])
 
-    with col2:
+with col2:
 
         st.header("Image Pre-processing using CLAHE")
         st.write("")
