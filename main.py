@@ -152,7 +152,6 @@ def photo1():
             histr = cv2.calcHist([image],[0],None,[256],[0,256])
             st.bar_chart(histr)
             #final_imag is the name
-            st.image(final_img)
         else:
             st.write("Make sure you image is in JPG/PNG Format.")
             
