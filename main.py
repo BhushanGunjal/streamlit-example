@@ -15,7 +15,7 @@ def main():
     if selected_box == 'Welcome':
         welcome()
     if selected_box == 'Detection':
-        feature_detection()
+        photo()
  
 
 def welcome():
