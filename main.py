@@ -8,6 +8,8 @@ from albumentations.pytorch import ToTensorV2
 import numpy as np
 np.random.seed(0)
 #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+loaded_model = Net(params['num_classes'])
 test_transforms = A.Compose(
     [
         A.SmallestMaxSize(max_size=512),
