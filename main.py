@@ -75,7 +75,7 @@ def photo():
 
             image_tensor = test_transforms(image=image)["image"]
             input_tensor = image_tensor.unsqueeze(0) 
-            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            device = torch.device("cpu")
             input_tensor = input_tensor.to(device)
 
             loaded_model.eval()
