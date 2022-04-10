@@ -2,7 +2,19 @@ import streamlit as st
 from PIL import Image
 import cv2 
 import numpy as np
-
+import cv2
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
+import numpy as np
+np.random.seed(0)
+test_transforms = A.Compose(
+    [
+        A.SmallestMaxSize(max_size=512),
+        A.CenterCrop(height=512, width=512),
+        A.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
+        ToTensorV2(),
+    ]
+)
 
 
 def main():
