@@ -54,8 +54,7 @@ def photo():
             
             st.image(img)
             
-            
-            img.save(r'C:\Users\durve\OneDrive\Desktop\Machine Learning\1.jpg')
+            cv2.imwrite('C:\Users\durve\OneDrive\Desktop\Machine Learning\1.jpg',img)
             #final_img0 = cv2.resize(img8, (255, 255))
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
             image = cv2.imread(r'C:\Users\durve\OneDrive\Desktop\Machine Learning\1.jpg')
