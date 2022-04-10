@@ -1,3 +1,22 @@
+import streamlit as st
+from PIL import Image
+import cv2 
+import numpy as np
+
+
+
+def main():
+
+    selected_box = st.sidebar.selectbox(
+    'Choose one of the following',
+    ('Welcome','Detection')
+    )
+    
+    if selected_box == 'Welcome':
+        welcome()
+    if selected_box == 'Detection':
+        photo()
+ 
 
 def welcome():
     _, col2, _ = st.columns([1, 10, 1])
