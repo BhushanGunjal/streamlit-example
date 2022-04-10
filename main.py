@@ -54,7 +54,12 @@ def photo():
             
             st.image(img)
             
-            image = cv2.imread(img) #Reading Image from path(/Image_Name.jpg) eg. here - /content/pneumonia bacterial.jpg
+            
+            img.save(r'C:\Users\durve\OneDrive\Desktop\Machine Learning\1.jpg')
+            #final_img0 = cv2.resize(img8, (255, 255))
+            #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+            image = cv2.imread(r'C:\Users\durve\OneDrive\Desktop\Machine Learning\1.jpg')
+
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
             image_tensor = test_transforms(image=image)["image"]
