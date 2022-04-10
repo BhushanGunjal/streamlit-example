@@ -7,7 +7,7 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 import numpy as np
 np.random.seed(0)
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 test_transforms = A.Compose(
     [
         A.SmallestMaxSize(max_size=512),
@@ -76,7 +76,7 @@ def photo():
 
             image_tensor = test_transforms(image=image)["image"]
             input_tensor = image_tensor.unsqueeze(0) 
-            input_tensor = input_tensor.to(device)
+          #  input_tensor = input_tensor.to(device)
 
             loaded_model.eval()
             prediction = np.argmax(loaded_model(input_tensor).detach().cpu().numpy())
