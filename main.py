@@ -91,21 +91,21 @@ def welcome():
     #_, col2, _ = st.columns([1, 10, 1])
 
     #with col2:
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.title('Covid 19 Detection using X-ray')
+     st.write("")
+     st.write("")
+     st.write("")
+     st.write("")
+     st.write("")
+     st.title('Covid 19 Detection using X-ray')
     #with col2:
-        st.write("")
-        st.write("")
-        st.write("")
-        st.subheader('Dhanashree Chavan')
-        st.write("")
-        st.subheader('Bhushan Gunjal')
-        st.write("")
-        st.subheader('Durvesh Talekar')
+     st.write("")
+     st.write("")
+     st.write("")
+     st.subheader('Dhanashree Chavan')
+     st.write("")
+     st.subheader('Bhushan Gunjal')
+     st.write("")
+     st.subheader('Durvesh Talekar')
     
 
 
