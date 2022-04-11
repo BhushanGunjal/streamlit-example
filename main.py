@@ -13,14 +13,6 @@ np.random.seed(0)
 #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-def loaded_model():
-  fp = "something.h5"
-  model_loader = load_model(fp)
- 
-  model_loader.eval()
-   
-  return model_loader
-
 
 test_transforms = A.Compose(
     [
@@ -68,6 +60,16 @@ def welcome():
 
 
 def photo():
+    import torch
+    if(torch.cuda.is_available() == False):
+      checkpoint = torch.load('checkpoint.tar', map_location ='cpu')
+    else:
+      checkpoint = torch.load('checkpoint.tar')
+    loaded_model = Net(params['num_classes'])
+
+    loaded_model.load_state_dict(checkpoint['model_state_dict'])
+    loaded_criterion = checkpoint['loss']
+
     uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
     def load_image(img):
             im = Image.open(img)
@@ -90,10 +92,12 @@ def photo():
 
             image_tensor = test_transforms(image=image)["image"]
             input_tensor = image_tensor.unsqueeze(0) 
-          #  input_tensor = input_tensor.to(device)
+            input_tensor = input_tensor.to(device)
+            
+            loaded_model.eval()
+            prediction = np.argmax(loaded_model(input_tensor).detach().cpu().numpy())
 
-     
-            prediction = np.argmax(load_model("model.h5")(input_tensor).detach().cpu().numpy())
+ 
             Predicted_Class = idx_to_class[prediction]
             st.write(Predicted_Class)
     else:
