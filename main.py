@@ -11,19 +11,6 @@ from tensorflow.keras.preprocessing import image
 st.set_option('deprecation.showfileUploaderEncoding', False)
 @st.cache(allow_output_mutation=True)
 
-#def loading_model():
- # fp = "model.h5"
-#  model_loader = load_model(fp)
- # return model_loader
-
-#cnn = loading_model()
-
-
-
-
-  
-
-
 temp = st.file_uploader("Upload X-Ray Image")
 #temp = temp.decode()
 
