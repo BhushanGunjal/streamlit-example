@@ -100,12 +100,6 @@ def welcome():
 
 
 def photo(): 
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.write(' ')
-
-    with col2:
-
         import torch
         if(torch.cuda.is_available() == False):
           checkpoint = torch.load('checkpoint.tar', map_location ='cpu')
@@ -157,8 +151,7 @@ def photo():
                 st.write("Make sure you image is in JPG/PNG Format.")
 
 
-    with col3:
-        st.write(' ')
+ 
 
     
 if __name__ == "__main__":
