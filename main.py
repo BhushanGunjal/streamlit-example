@@ -11,12 +11,12 @@ from tensorflow.keras.preprocessing import image
 st.set_option('deprecation.showfileUploaderEncoding', False)
 @st.cache(allow_output_mutation=True)
 
-def loading_model():
-  fp = "model.h5"
-  model_loader = load_model(fp)
-  return model_loader
+#def loading_model():
+ # fp = "model.h5"
+#  model_loader = load_model(fp)
+ # return model_loader
 
-cnn = loading_model()
+#cnn = loading_model()
 st.write("""
 # X-Ray Classification [Pneumonia/Normal]
 by Hardik :)
