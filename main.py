@@ -138,7 +138,6 @@ def photo():
                 prediction = np.argmax(loaded_model(input_tensor).detach().cpu().numpy())
 
                 Predicted_Class = idx_to_class[prediction]
-                st.write(Predicted_Class)
 
                 model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
                 probabilities = softmax(model_output)
