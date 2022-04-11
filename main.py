@@ -146,11 +146,11 @@ def photo():
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                     
                 elif(Predicted_Class=='covid'):
-                    st.title("Unfortunately Covid is detected in your Xray!😓")
+                    st.title("Unfortunately Covid is detected in your Xray!🥺")
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                     
                 else:
-                    st.title("Be alert! Pneumonia is detected.🥺")
+                    st.title("Be alert! Pneumonia is detected.😓")
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                 st.header(a)
 
