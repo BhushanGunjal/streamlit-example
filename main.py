@@ -146,7 +146,7 @@ def photo():
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"."
                 else:
                     a="There is "+str(max(probabilities)*100)[:4]+"% chance that the person has "+Predicted_Class+"."
-                st.title(a)
+                st.write(a)
 
 
 
