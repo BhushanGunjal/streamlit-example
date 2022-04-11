@@ -79,16 +79,19 @@ def main():
 
 def welcome():
    # _, col2, _ = st.columns([1, 10, 1])
-     page_bg_img = '''
-     <style>
-     body {
-     background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-     background-size: cover;
-     }
-     </style>
-     '''
-
-     st.markdown(page_bg_img, unsafe_allow_html=True)
+      st.markdown(
+      """
+      <style>
+      .reportview-container {
+        background: url("https://www.who.int/images/default-source/health-topics/coronavirus/corona-virus-getty.tmb-1200v.jpg?Culture=en&sfvrsn=217a6a68_36")
+      }
+     .sidebar .sidebar-content {
+        background: url("https://www.who.int/images/default-source/health-topics/coronavirus/corona-virus-getty.tmb-1200v.jpg?Culture=en&sfvrsn=217a6a68_36")
+    }
+    </style>
+    """,
+     unsafe_allow_html=True
+     )
    # with col2:
      st.write("")
      st.write("")
