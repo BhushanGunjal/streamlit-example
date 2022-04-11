@@ -16,6 +16,9 @@ np.random.seed(0)
 def loaded_model():
   fp = "something.h5"
   model_loader = load_model(fp)
+ 
+  model_loader.eval()
+   
   return model_loader
 
 
@@ -90,7 +93,7 @@ def photo():
           #  input_tensor = input_tensor.to(device)
 
             loaded_model.eval()
-            prediction = np.argmax(load_model("something.h5")(input_tensor).detach().cpu().numpy())
+            prediction = np.argmax(load_model("model.h5")(input_tensor).detach().cpu().numpy())
             Predicted_Class = idx_to_class[prediction]
             st.write(Predicted_Class)
     else:
