@@ -52,14 +52,14 @@ else:
   pp_hardik_img = np.expand_dims(pp_hardik_img, axis=0)
 
   #predict
-  hardik_preds= cnn.predict(pp_hardik_img)
+  #hardik_preds= cnn.predict(pp_hardik_img)
 
-  out = hardik_preds
+  #out = hardik_preds
   
 
-  st.success(out)
+ # st.success(out)
   
-  st.image(image,use_column_width=True)
+  st.image(pp_hardik_img,use_column_width=True)
           
        
 
