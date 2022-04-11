@@ -12,7 +12,27 @@ from tensorflow.keras.models import load_model
 np.random.seed(0)
 #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+def Net(num_classes):
+    model = torchvision.models.densenet121(pretrained=True)
+    
+    # Freeze parameters so we don't backprop through them
+    for param in model.parameters():
+        param.requires_grad = False
 
+    #model.classifier = torch.nn.Linear(in_features=1024, out_features=3)
+
+    from collections import OrderedDict
+    classifier = nn.Sequential(OrderedDict([
+                              ('fc1', nn.Linear(1024, 512)),
+                              ('relu', nn.ReLU()),
+                              ('fc2', nn.Linear(512, 256)),
+                              ('relu', nn.ReLU()),
+                              ('fc3', nn.Linear(256, num_classes)),
+                              ('output', nn.LogSoftmax(dim=1))
+                              ]))
+
+    model.classifier = classifier
+    return model
 
 test_transforms = A.Compose(
     [
