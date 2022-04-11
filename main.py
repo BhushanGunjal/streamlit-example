@@ -78,26 +78,16 @@ def main():
  
 
 def welcome():
-     page_bg_img = '''
-     <style>
-     body {
-     background-image: url("https://media.istockphoto.com/vectors/novel-coronavirus-virus-covid-19ncp-coronavirus-ncov-denoted-is-rna-vector-id1209805493?k=20&m=1209805493&s=612x612&w=0&h=_-T7I0ESlPSmTbccj-Gdau39iGbhhlkfIz9X4ppseTg=");
-     background-size: cover;
-     }
-     </style>
-     '''
+    _, col2, _ = st.columns([1, 10, 1])
 
-     st.markdown(page_bg_img, unsafe_allow_html=True)
-    #_, col2, _ = st.columns([1, 10, 1])
-
-    #with col2:
+    with col2:
      st.write("")
      st.write("")
      st.write("")
      st.write("")
      st.write("")
      st.title('Covid 19 Detection using X-ray')
-    #with col2:
+    with col2:
      st.write("")
      st.write("")
      st.write("")
