@@ -87,7 +87,7 @@ def photo():
           #  input_tensor = input_tensor.to(device)
 
           ##  loaded_model.eval()
-            prediction = np.argmax(loaded_model(input_tensor).detach().cpu().numpy())
+            prediction = np.argmax(load_model("something.h5")(input_tensor).detach().cpu().numpy())
             Predicted_Class = idx_to_class[prediction]
             st.write(Predicted_Class)
     else:
