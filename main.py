@@ -133,6 +133,12 @@ def photo():
  
             Predicted_Class = idx_to_class[prediction]
             st.write(Predicted_Class)
+            
+            model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
+            probabilities = softmax(model_output)
+            st.write(probabilities)
+        
+        
     else:
             st.write("Make sure you image is in JPG/PNG Format.")
 
