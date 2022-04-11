@@ -143,12 +143,9 @@ def photo():
             
             model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
             probabilities = softmax(model_output)
-            st.write("You are ",str(max(probabilities)*100)[:4],"% ",Predicted_Class)
+            st.title("You are ",str(max(probabilities)*100)[:4],"% ",Predicted_Class)
             
-            new_title = '<p style="font-family:sans-serif; color:Green; font-size: 42px;">"You are ",str(max(probabilities)*100)[:4],"% ",Predicted_Class</p>'
-            new_title1 = '<p style="font-family:sans-serif; color:Green; font-size: 42px;">"You are "</p>,str(max(probabilities)*100)[:4],"% ",<p style="font-family:sans-serif; color:Green; font-size: 42px;">>Predicted_Class</p>'
-            st.markdown(new_title, unsafe_allow_html=True)
-            st.markdown(new_title1, unsafe_allow_html=True)
+   
         
     else:
             st.write("Make sure you image is in JPG/PNG Format.")
