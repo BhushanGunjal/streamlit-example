@@ -143,7 +143,8 @@ def photo():
             
             model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
             probabilities = softmax(model_output)
-            st.title("You are ",str(max(probabilities)*100)[:4],"% ",Predicted_Class)
+            a="You are "+str(max(probabilities)*100)[:4]+"% "+Predicted_Class
+            st.title(a)
             
    
         
