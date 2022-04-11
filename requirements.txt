@@ -5,3 +5,8 @@ tensorflow
 matplotlib
 numpy
 opencv-python-headless
+torch
+albumentations
+torchvision
+pillow
+h5py

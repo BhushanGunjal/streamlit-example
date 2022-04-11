@@ -12,7 +12,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 @st.cache(allow_output_mutation=True)
 
 def loading_model():
-  fp = "something.h5"
+  fp = "model.h5"
   model_loader = load_model(fp)
   return model_loader
 
@@ -54,7 +54,7 @@ else:
   #predict
   hardik_preds= cnn.predict(pp_hardik_img)
 
-  out = hardik_preds[0][0]
+  out = hardik_preds[0][0])
   
 
   st.success(out)
@@ -62,6 +62,4 @@ else:
   image = Image.open(temp)
   st.image(image,use_column_width=True)
           
-       
-
-
+            
