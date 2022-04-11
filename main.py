@@ -122,6 +122,8 @@ def photo():
             st.write("")
             img = load_image(uploadFile)
             
+            image1 = img.resize((500,500))
+            st.image(image1)
             
             cv2.imwrite('1.jpg',img)
             #final_img0 = cv2.resize(img8, (255, 255))
@@ -137,8 +139,6 @@ def photo():
             loaded_model.eval()
             prediction = np.argmax(loaded_model(input_tensor).detach().cpu().numpy())
 
-            image1 = image.resize((500,500))
-            st.image(image1)
             Predicted_Class = idx_to_class[prediction]
             st.write(Predicted_Class)
             
