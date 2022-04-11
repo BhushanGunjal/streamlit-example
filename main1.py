@@ -12,7 +12,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 @st.cache(allow_output_mutation=True)
 
 def loading_model():
-  fp = "cnn_pneu_vamp_model.h5"
+  fp = "something.h5"
   model_loader = load_model(fp)
   return model_loader
 
@@ -53,11 +53,9 @@ else:
 
   #predict
   hardik_preds= cnn.predict(pp_hardik_img)
-  if hardik_preds>= 0.5:
-    out = ('I am {:.2%} percent confirmed that this is a Pneumonia case'.format(hardik_preds[0][0]))
+
+  out = hardik_preds[0][0])
   
-  else: 
-    out = ('I am {:.2%} percent confirmed that this is a Normal case'.format(1-hardik_preds[0][0]))
 
   st.success(out)
   
