@@ -141,7 +141,7 @@ def photo():
 
                 model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
                 probabilities = softmax(model_output)
-                if(Predicted_Class='normal'):
+                if(Predicted_Class=='normal'):
                     a="There are "+str(max(probabilities)*100)[:4]+"% chances that the Xray image is "+Predicted_Class+"."
                 else:
                     a="There are "+str(max(probabilities)*100)[:4]+"% chances that the person has "+Predicted_Class+"."
