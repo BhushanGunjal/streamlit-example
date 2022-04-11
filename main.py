@@ -12,7 +12,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 np.random.seed(0)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
+idx_to_class = {i:j for i, j in enumerate(classes)}
 params = {
 #    "model": "densenet121",
     #"device": "cpu",
