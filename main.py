@@ -143,7 +143,7 @@ def photo():
             
             model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
             probabilities = softmax(model_output)
-            st.write(probabilities)
+            st.write(max(probabilities)*100)
         
         
     else:
