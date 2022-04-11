@@ -1,5 +1,5 @@
 
-
+import torch.nn as nn
 import torchvision
 import streamlit as st
 from PIL import Image
