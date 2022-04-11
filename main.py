@@ -138,7 +138,7 @@ def photo():
             prediction = np.argmax(loaded_model(input_tensor).detach().cpu().numpy())
 
             image1 = img.resize((500,500)
-            st.write(image1)
+            st.image(image1)
             Predicted_Class = idx_to_class[prediction]
             st.write(Predicted_Class)
             
