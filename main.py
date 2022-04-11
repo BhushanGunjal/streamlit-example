@@ -122,9 +122,8 @@ def photo():
             st.write("")
             img = load_image(uploadFile)
             
-           # image1 = img.resize((500,500))
-            st.image(img.resize((500,500)))
-            
+            final_img = cv2.resize(img, (299, 299))
+            st.image(final_img)
             cv2.imwrite('1.jpg',img)
             #final_img0 = cv2.resize(img8, (255, 255))
             #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
