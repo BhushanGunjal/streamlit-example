@@ -12,6 +12,18 @@ from tensorflow.keras.models import load_model
 np.random.seed(0)
 #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+params = {
+#    "model": "densenet121",
+    #"device": "cpu",
+    "lr": 0.01,
+    "batch_size": 32,
+    "num_workers": 64,
+    "n_epochs": 15,
+    "image_size": 512, 
+    "in_channels": 3, 
+    "num_classes": 3
+}
+
 def Net(num_classes):
     model = torchvision.models.densenet121(pretrained=True)
     
