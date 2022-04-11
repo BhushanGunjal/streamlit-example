@@ -54,12 +54,11 @@ else:
   #predict
   hardik_preds= cnn.predict(pp_hardik_img)
 
-  out = hardik_preds[0][0]
+  out = hardik_preds
   
 
   st.success(out)
   
-  image = Image.open(temp)
   st.image(image,use_column_width=True)
           
        
