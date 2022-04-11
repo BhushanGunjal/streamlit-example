@@ -99,59 +99,66 @@ def welcome():
     
 
 
-def photo():
-    _, col2, _ = st.columns([1, 10, 1])
-    import torch
-    if(torch.cuda.is_available() == False):
-      checkpoint = torch.load('checkpoint.tar', map_location ='cpu')
-    else:
-      checkpoint = torch.load('checkpoint.tar')
-    loaded_model = Net(params['num_classes'])
+def photo(): 
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.write(' ')
 
-    loaded_model.load_state_dict(checkpoint['model_state_dict'])
-    loaded_criterion = checkpoint['loss']
+    with col2:
 
-    uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
-    def load_image(img):
-            im = Image.open(img)
-            image_array = np.array(im)
-            return image_array
+        import torch
+        if(torch.cuda.is_available() == False):
+          checkpoint = torch.load('checkpoint.tar', map_location ='cpu')
+        else:
+          checkpoint = torch.load('checkpoint.tar')
+        loaded_model = Net(params['num_classes'])
 
-    if uploadFile is not None:
-            st.write("Original X-ray Image:")
-            st.write("")
-            img = load_image(uploadFile)
-            
-            final_img = cv2.resize(img, (299, 299))
-            st.image(final_img)
-            cv2.imwrite('1.jpg',img)
-            #final_img0 = cv2.resize(img8, (255, 255))
-            #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-            image = cv2.imread(r'1.jpg')
+        loaded_model.load_state_dict(checkpoint['model_state_dict'])
+        loaded_criterion = checkpoint['loss']
 
-            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        uploadFile = st.file_uploader(label="Upload image", type=['jpg', 'png', 'jpeg'])
+        def load_image(img):
+                im = Image.open(img)
+                image_array = np.array(im)
+                return image_array
 
-            image_tensor = test_transforms(image=image)["image"]
-            input_tensor = image_tensor.unsqueeze(0) 
-            input_tensor = input_tensor.to(device)
-            
-            loaded_model.eval()
-            prediction = np.argmax(loaded_model(input_tensor).detach().cpu().numpy())
+        if uploadFile is not None:
+                st.write("Original X-ray Image:")
+                st.write("")
+                img = load_image(uploadFile)
 
-            Predicted_Class = idx_to_class[prediction]
-            st.write(Predicted_Class)
-            
-            model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
-            probabilities = softmax(model_output)
-            a="You are "+str(max(probabilities)*100)[:4]+"% "+Predicted_Class
-            st.title(a)
-            
-   
-        
-    else:
-            st.write("Make sure you image is in JPG/PNG Format.")
+                final_img = cv2.resize(img, (299, 299))
+                st.image(final_img)
+                cv2.imwrite('1.jpg',img)
+                #final_img0 = cv2.resize(img8, (255, 255))
+                #im = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+                image = cv2.imread(r'1.jpg')
 
-            
+                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+                image_tensor = test_transforms(image=image)["image"]
+                input_tensor = image_tensor.unsqueeze(0) 
+                input_tensor = input_tensor.to(device)
+
+                loaded_model.eval()
+                prediction = np.argmax(loaded_model(input_tensor).detach().cpu().numpy())
+
+                Predicted_Class = idx_to_class[prediction]
+                st.write(Predicted_Class)
+
+                model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
+                probabilities = softmax(model_output)
+                a="You are "+str(max(probabilities)*100)[:4]+"% "+Predicted_Class
+                st.title(a)
+
+
+
+        else:
+                st.write("Make sure you image is in JPG/PNG Format.")
+
+
+    with col3:
+        st.write(' ')
 
     
 if __name__ == "__main__":
