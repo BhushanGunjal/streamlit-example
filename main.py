@@ -10,6 +10,13 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 import numpy as np
 from tensorflow.keras.models import load_model
+
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum()
+
+
 np.random.seed(0)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 idx_to_class = {0: 'normal', 1: 'covid', 2: 'pneumonia'}
