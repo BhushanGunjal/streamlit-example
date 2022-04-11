@@ -150,8 +150,8 @@ def photo():
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                     
                 else:
-                    st.title("Be alert! Pneumonia is detected.💔")
-                    a="There is "+str(max(probabilities)*100)[:4]+"% chance that the person has "+Predicted_Class+"."
+                    st.title("Be alert! Pneumonia is detected.🥺")
+                    a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                 st.header(a)
 
 
