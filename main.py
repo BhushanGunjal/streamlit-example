@@ -100,7 +100,7 @@ def welcome():
 
 
 def photo():
-    _, col2, _ = st.columns([1, 10, 1])
+   # _, col2, _ = st.columns([1, 10, 1])
     import torch
     if(torch.cuda.is_available() == False):
       checkpoint = torch.load('checkpoint.tar', map_location ='cpu')
