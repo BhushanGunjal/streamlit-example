@@ -79,7 +79,7 @@ def main():
 
 def welcome():
    # _, col2, _ = st.columns([1, 10, 1])
-      st.markdown(
+     st.markdown(
       """
       <style>
       .reportview-container {
