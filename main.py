@@ -9,7 +9,13 @@ import numpy as np
 np.random.seed(0)
 #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-loaded_model = Net(params['num_classes'])
+
+def loaded_model():
+  fp = "something.h5"
+  model_loader = load_model(fp)
+  return model_loader
+
+
 test_transforms = A.Compose(
     [
         A.SmallestMaxSize(max_size=512),
