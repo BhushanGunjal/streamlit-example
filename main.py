@@ -122,8 +122,8 @@ def photo():
             st.write("")
             img = load_image(uploadFile)
             
-            image1 = img.resize((500,500))
-            st.image(image1)
+           # image1 = img.resize((500,500))
+            st.image(img)
             
             cv2.imwrite('1.jpg',img)
             #final_img0 = cv2.resize(img8, (255, 255))
