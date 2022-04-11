@@ -18,7 +18,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 #cnn = loading_model()
 st.write("""
-# X-Ray Classification [Pneumonia/Normal]
+ X-Ray Classification [Pneumonia/Normal]
 by Hardik :)
 """)
 
