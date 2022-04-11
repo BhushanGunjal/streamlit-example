@@ -11,7 +11,7 @@ from albumentations.pytorch import ToTensorV2
 import numpy as np
 from tensorflow.keras.models import load_model
 np.random.seed(0)
-#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 params = {
 #    "model": "densenet121",
