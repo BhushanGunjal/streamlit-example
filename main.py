@@ -78,16 +78,16 @@ def main():
  
 
 def welcome():
-    _, col2, _ = st.columns([1, 10, 1])
+   # _, col2, _ = st.columns([1, 10, 1])
 
-    with col2:
+   # with col2:
      st.write("")
      st.write("")
      st.write("")
      st.write("")
      st.write("")
      st.title('Covid 19 Detection using X-ray')
-    with col2:
+  #  with col2:
      st.write("")
      st.write("")
      st.write("")
