@@ -103,6 +103,8 @@ def welcome():
      st.write("")
      st.write("")
      st.write("")
+     st.write("Developers:")
+     st.write("")
      st.subheader('Dhanashree Chavan')
      st.write("")
      st.subheader('Bhushan Gunjal')
