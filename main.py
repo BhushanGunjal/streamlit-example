@@ -103,7 +103,6 @@ def welcome():
      st.write("")
      st.write("")
      st.write("")
-     <*font color=‘red’>Developers:</*font>, unsafe_allow_html=True)
      st.write("")
      st.subheader('Dhanashree Chavan')
      st.write("")
