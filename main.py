@@ -162,7 +162,7 @@ def photo():
                     st.title("Unfortunately Covid is detected in your Xray!🥺")
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                     
-                else:
+                elif(Predicted_Class=='normal'):
                     st.title("Phew😮‍💨 !!! Your X-ray image is normal.")
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                 st.header(a)
