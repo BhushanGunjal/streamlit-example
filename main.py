@@ -154,8 +154,8 @@ def photo():
 
                 model_output = loaded_model(input_tensor).detach().cpu().numpy().flatten()
                 probabilities = softmax(model_output)
-                if(Predicted_Class=='normal'):
-                    st.title("Phew😮‍💨 !!! Your X-ray image is normal.")
+                if(Predicted_Class=='pneumonia'):
+                    st.title("Be alert! Pneumonia is detected.😓")
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                     
                 elif(Predicted_Class=='covid'):
@@ -163,7 +163,7 @@ def photo():
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                     
                 else:
-                    st.title("Be alert! Pneumonia is detected.😓")
+                    st.title("Phew😮‍💨 !!! Your X-ray image is normal.")
                     a="Accuracy: "+str(max(probabilities)*100)[:4]+"%"
                 st.header(a)
 
