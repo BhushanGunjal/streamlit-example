@@ -4,7 +4,7 @@ streamlit
 tensorflow
 matplotlib
 numpy
-opencv-python==4.5.5.64
+opencv-python-headless
 torch
 albumentations==1.0.3
 torchvision
