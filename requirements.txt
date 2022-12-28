@@ -6,7 +6,7 @@ matplotlib
 numpy
 opencv-python-headless
 torch
-albumentations
+albumentations==1.1.0
 torchvision
 pillow
 h5py
